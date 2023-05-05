@@ -6,8 +6,8 @@ async function run() {
     const octokit = new Octokit({
       auth: core.getInput("token"),
     });
-    const owner = "lucianHymer";
-    const repo = "workflowTest";
+    const owner = core.getInput("owner");
+    const repo = core.getInput("repo");
     var releases = await octokit.request("GET /repos/{owner}/{repo}/releases", {
       owner: owner,
       repo: repo,

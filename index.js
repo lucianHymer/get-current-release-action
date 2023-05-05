@@ -8,9 +8,12 @@ async function run() {
     });
     const owner = "lucianHymer";
     const repo = "workflowTest";
-    var releases = await octokit.repos.listReleases({
+    var releases = await octokit.request("GET /repos/{owner}/{repo}/releases", {
       owner: owner,
       repo: repo,
+      headers: {
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
     });
     // core.setOutput("tag", "abc");
     console.log(`The release payload: ${JSON.stringify(releases)}`);

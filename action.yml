@@ -4,6 +4,12 @@ inputs:
   token:
     description: 'Github Token'
     required: true
+  owner:
+    description: 'repo owner'
+    required: true
+  repo:
+    description: 'repo name'
+    required: true
 outputs:
   tag: 
     description: 'Release tag'

@@ -4,7 +4,7 @@ const github = require("@actions/github");
 async function run() {
   try {
     const octokit = new github.Octokit({
-      auth: core.input("token"),
+      auth: core.getInput("token"),
     });
     const owner = "lucianHymer";
     const repo = "workflowTest";

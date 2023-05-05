@@ -1,0 +1,12 @@
+name: 'Get Current Release'
+description: 'Gets the latest draft or published release'
+inputs:
+  token:
+    description: 'Github Token'
+    required: true
+outputs:
+  tag: 
+    description: 'Release tag'
+runs:
+  using: 'node16'
+  main: 'index.js'

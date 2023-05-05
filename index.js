@@ -1,9 +1,9 @@
 const core = require("@actions/core");
-const github = require("@actions/github");
+const { Octokit } = require("@octokit/rest");
 
 async function run() {
   try {
-    const octokit = new github.Octokit({
+    const octokit = new Octokit({
       auth: core.getInput("token"),
     });
     const owner = "lucianHymer";

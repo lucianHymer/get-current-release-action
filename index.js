@@ -13,7 +13,7 @@ async function run() {
       repo: repo,
     });
     // core.setOutput("tag", "abc");
-    console.log(`The release payload: ${releases}`);
+    console.log(`The release payload: ${JSON.stringify(releases)}`);
   } catch (error) {
     core.setFailed(error.message);
   }

@@ -15,8 +15,12 @@ async function run() {
         "X-GitHub-Api-Version": "2022-11-28",
       },
     });
-    // core.setOutput("tag", "abc");
-    console.log(`The release payload: ${JSON.stringify(releases)}`);
+
+    const latestRelease = releases.data[0];
+
+    core.setOutput("tag", latestRelease.tag_name);
+
+    console.log(`Latest release: ${JSON.stringify(latestRelease)}`);
   } catch (error) {
     core.setFailed(error.message);
   }
